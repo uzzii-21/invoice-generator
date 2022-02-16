@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -7,8 +7,8 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_PROJECR_Id,
   storageBucket: process.env.REACT_APP_STIRAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-};
+  appId: process.env.REACT_APP_APP_ID
+}
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+initializeApp(firebaseConfig)
