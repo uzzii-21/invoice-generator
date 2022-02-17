@@ -1,7 +1,7 @@
+import Container from "./components/container/Container"
+
 const App = () => (
-  <div className="App">
-    <h1 className="text-5xl">This is Uzair</h1>
-  </div>
+  <Container />
 )
 
 export default App
