@@ -1,7 +1,10 @@
-import Container from "./components/container/Container"
+import Container from './components/container/Container'
+import SideBar from './components/SideBar/SideBar'
 
 const App = () => (
-  <Container />
+  <Container>
+    <SideBar />
+  </Container>
 )
 
 export default App
