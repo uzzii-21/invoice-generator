@@ -8,7 +8,7 @@ const SideBarButton = ({ icon, tooltip }) => (
 )
 
 SideBarButton.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.node.isRequired,
   tooltip: PropTypes.string.isRequired
 }
 

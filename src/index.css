@@ -5,8 +5,7 @@
   html {
     @apply font-poppins;
   }
-  input,
-  select {
+  input {
     @apply text-darkSecondary;
   }
   .container {
@@ -26,5 +25,8 @@
   }
   .sidebar-tooltip {
     @apply absolute w-auto p-2 m-2 min-w-max left-20 rounded-md shadow-md text-darkPrimary bg-secondary dark:text-primary dark:bg-darkSecondary text-xs font-bold transition-all duration-100 origin-left scale-0;
+  }
+  .input {
+    @apply mt-1 dark:focus:ring-primary dark:focus:border-darkPrimary focus:ring-darkPrimary focus:border-primary border-primary dark:border-darkPrimary block w-full shadow-sm sm:text-sm rounded-md;
   }
 }
