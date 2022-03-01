@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: 'class',
+  // darkMode: 'class',
   content: ['./src/**/*.{js,jsx}'],
   theme: {
     extend: {
@@ -15,5 +15,5 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/forms')]
 }

@@ -18,8 +18,10 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
+    "global-require": 0,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    // "react/jsx-uses-react": "error",
+    // "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": [
       2,

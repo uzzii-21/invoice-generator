@@ -8,6 +8,8 @@ import { ReactComponent as UnpaidIcon } from './unpaid.svg'
 import { ReactComponent as DueIcon } from './due.svg'
 import { ReactComponent as DraftIcon } from './draft.svg'
 import { ReactComponent as XIcon } from './xIcon.svg'
+import { ReactComponent as CheckIcon } from './check.svg'
+import { ReactComponent as SelectorIcon } from './select.svg'
 
 export {
   HistoryIcon,
@@ -19,5 +21,7 @@ export {
   PaidIcon,
   UnpaidIcon,
   DueIcon,
-  XIcon
+  XIcon,
+  CheckIcon,
+  SelectorIcon
 }
