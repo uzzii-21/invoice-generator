@@ -1,5 +1,5 @@
 import { DashboardIcon, HistoryIcon } from '../../assets'
-import SideBarButton from '../SideBarButton/SideBarButton'
+import { SideBarButton } from '../../components'
 
 const SideBar = () => (
   <div className="side-bar">

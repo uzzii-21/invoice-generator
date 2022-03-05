@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import Container from './components/Container/Container'
-import InvoiceFormPanel from './components/InvoiceFormPanel/InvoiceFormPanel'
-import SideBar from './components/SideBar/SideBar'
+import { SideBar, InvoiceFormPanel } from './containers'
 
 const App = () => {
   const [invoicePanelState, setInvoicePanelState] = useState(true)
@@ -9,10 +7,10 @@ const App = () => {
     setInvoicePanelState(!invoicePanelState)
   }
   return (
-    <Container>
+    <main className="container">
       <SideBar />
       <InvoiceFormPanel toggle={invoicePanelState} setToggle={setToggle} />
-    </Container>
+    </main>
   )
 }
 export default App

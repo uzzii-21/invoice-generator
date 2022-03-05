@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import PropTypes from 'prop-types'
-import Autocomplete from '../Autocomplete/Autocomplete'
 import { XIcon } from '../../assets'
-import Input from '../Input/Input'
+import { Input, Autocomplete, ItemsList } from '../../components'
 
 const InvoiceFormPanel = ({ toggle, setToggle }) => (
   <Transition.Root show={toggle} as={Fragment}>
@@ -104,25 +104,27 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
 
                             <div className="col-span-3">
                               <Input
-                                labelText="Date"
+                                labelText="Invoice Date"
                                 type="date"
-                                name="date"
-                                id="date"
+                                name="invoice-date"
+                                id="invoice-date"
                               />
                             </div>
                             <div className="col-span-3">
                               <Input
-                                labelText="Due Date"
+                                labelText="Payment Due"
                                 type="date"
-                                name="due-date"
-                                id="due-date"
+                                name="payment-due"
+                                id="payment-due"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <h2 className="my-8 text-base font-bold ">Bill From</h2>
+                      <h2 className="my-8 text-base font-bold ">
+                        Your Details
+                      </h2>
                       <div>
                         <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
                           <div className="grid grid-cols-6 gap-6">
@@ -200,7 +202,9 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
                         </div>
                       </div>
 
-                      <h2 className="my-8 text-base font-bold ">Bill To</h2>
+                      <h2 className="my-8 text-base font-bold ">
+                        Client Details
+                      </h2>
                       <div>
                         <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
                           <div className="grid grid-cols-6 gap-6">
@@ -275,6 +279,13 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
                               />
                             </div>
                           </div>
+                        </div>
+                      </div>
+
+                      <h2 className="my-8 text-base font-bold ">Items List</h2>
+                      <div>
+                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
+                          <ItemsList />
                         </div>
                       </div>
                     </form>

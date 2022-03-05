@@ -4,7 +4,7 @@ import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '../../assets'
 import countryList from '../../constant/constant'
 
-const Example = () => {
+const Autocomplete = () => {
   const [selected, setSelected] = useState(countryList[166])
   const [query, setQuery] = useState('')
 
@@ -90,4 +90,4 @@ const Example = () => {
   )
 }
 
-export default Example
+export default Autocomplete
