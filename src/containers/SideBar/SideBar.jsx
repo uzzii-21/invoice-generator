@@ -1,6 +1,5 @@
 import { DashboardIcon, HistoryIcon, LogoutIcon } from '../../assets'
-import { SideBarButton } from '../../components'
-import Toggle from '../../components/Toggle/Toggle'
+import { SideBarButton, Toggle } from '../../components'
 
 const SideBar = () => (
   <div className="side-bar">
@@ -18,16 +17,15 @@ const SideBar = () => (
       <SideBarButton icon={<DashboardIcon />} tooltip="Dashboard" />
       <SideBarButton icon={<HistoryIcon />} tooltip="History" />
     </div>
-    <div  className="flex flex-col items-center justify-center mt-auto w-full">
-
-    <Toggle />
-    <a
-      className="flex items-center justify-center group w-full h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
-      href="/"
-    >
-      <LogoutIcon />
-      <span className="sidebar-tooltip group-hover:scale-100">Log Out</span>
-    </a>
+    <div className="flex flex-col items-center justify-center mt-auto w-full">
+      <Toggle />
+      <a
+        className="flex items-center justify-center group w-full h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
+        href="/"
+      >
+        <LogoutIcon />
+        <span className="sidebar-tooltip group-hover:scale-100">Log Out</span>
+      </a>
     </div>
   </div>
 )
