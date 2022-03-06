@@ -1,5 +1,6 @@
-import { DashboardIcon, HistoryIcon } from '../../assets'
+import { DashboardIcon, HistoryIcon, LogoutIcon } from '../../assets'
 import { SideBarButton } from '../../components'
+import Toggle from '../../components/Toggle/Toggle'
 
 const SideBar = () => (
   <div className="side-bar">
@@ -17,25 +18,17 @@ const SideBar = () => (
       <SideBarButton icon={<DashboardIcon />} tooltip="Dashboard" />
       <SideBarButton icon={<HistoryIcon />} tooltip="History" />
     </div>
+    <div  className="flex flex-col items-center justify-center mt-auto w-full">
+
+    <Toggle />
     <a
-      className="flex items-center justify-center w-full h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
+      className="flex items-center justify-center group w-full h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
       href="/"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6 stroke-current"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-        />
-      </svg>
+      <LogoutIcon />
+      <span className="sidebar-tooltip group-hover:scale-100">Log Out</span>
     </a>
+    </div>
   </div>
 )
 

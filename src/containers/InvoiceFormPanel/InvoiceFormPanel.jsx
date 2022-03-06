@@ -73,7 +73,7 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
                         Invoice Details
                       </h2>
                       <div>
-                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
+                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 rounded-md shadow">
                           <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-2">
                               <Input
@@ -126,7 +126,7 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
                         Your Details
                       </h2>
                       <div>
-                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
+                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 rounded-md shadow">
                           <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-3">
                               <Input
@@ -206,7 +206,7 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
                         Client Details
                       </h2>
                       <div>
-                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
+                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 rounded-md shadow">
                           <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-3">
                               <Input
@@ -283,10 +283,8 @@ const InvoiceFormPanel = ({ toggle, setToggle }) => (
                       </div>
 
                       <h2 className="my-8 text-base font-bold ">Items List</h2>
-                      <div>
-                        <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 p-6 rounded-md shadow">
-                          <ItemsList />
-                        </div>
+                      <div className="dark:bg-gray-800 bg-gray-200 rounded-md shadow">
+                        <ItemsList />
                       </div>
                     </form>
                   </div>

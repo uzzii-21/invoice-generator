@@ -10,6 +10,9 @@ import { ReactComponent as DraftIcon } from './draft.svg'
 import { ReactComponent as XIcon } from './xIcon.svg'
 import { ReactComponent as CheckIcon } from './check.svg'
 import { ReactComponent as SelectorIcon } from './select.svg'
+import { ReactComponent as LightIcon } from './light.svg'
+import { ReactComponent as DarkIcon } from './dark.svg'
+import { ReactComponent as LogoutIcon } from './logout.svg'
 
 export {
   HistoryIcon,
@@ -23,5 +26,8 @@ export {
   DueIcon,
   XIcon,
   CheckIcon,
-  SelectorIcon
+  SelectorIcon,
+  LightIcon,
+  DarkIcon,
+  LogoutIcon
 }

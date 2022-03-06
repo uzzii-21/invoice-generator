@@ -1,7 +1,7 @@
 import Input from '../Input/Input'
 
 const ItemsList = () => (
-  <>
+  <div className="px-4 py-5">
     <h3 className="mb-4 font-bold">Item : 1</h3>
     <div className="grid grid-cols-8 gap-6">
       <div className="col-span-4">
@@ -37,7 +37,7 @@ const ItemsList = () => (
         />
       </div>
     </div>
-  </>
+  </div>
 )
 
 export default ItemsList
