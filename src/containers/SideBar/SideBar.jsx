@@ -1,7 +1,15 @@
-import { DashboardIcon, HistoryIcon, LogoutIcon } from '../../assets'
+import PropTypes from 'prop-types'
+import {
+  AddIcon,
+  DashboardIcon,
+  HistoryIcon,
+  LogoutIcon,
+  SettingIcon,
+  UserIcon
+} from '../../assets'
 import { SideBarButton, Toggle } from '../../components'
 
-const SideBar = () => (
+const SideBar = ({ openForm }) => (
   <div className="side-bar">
     <a className="mt-3" href="/">
       <svg
@@ -14,8 +22,15 @@ const SideBar = () => (
       </svg>
     </a>
     <div className="mt-3 mx-3 border-t border-darkPrimary">
+      <SideBarButton
+        icon={<AddIcon />}
+        tooltip="Create Invoice"
+        onClick={openForm}
+      />
       <SideBarButton icon={<DashboardIcon />} tooltip="Dashboard" />
       <SideBarButton icon={<HistoryIcon />} tooltip="History" />
+      <SideBarButton icon={<UserIcon />} tooltip="Profile" />
+      <SideBarButton icon={<SettingIcon />} tooltip="Setting" />
     </div>
     <div className="flex flex-col items-center justify-center mt-auto w-full">
       <Toggle />
@@ -29,5 +44,9 @@ const SideBar = () => (
     </div>
   </div>
 )
+
+SideBar.propTypes = {
+  openForm: PropTypes.func.isRequired
+}
 
 export default SideBar

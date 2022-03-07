@@ -13,6 +13,8 @@ import { ReactComponent as SelectorIcon } from './select.svg'
 import { ReactComponent as LightIcon } from './light.svg'
 import { ReactComponent as DarkIcon } from './dark.svg'
 import { ReactComponent as LogoutIcon } from './logout.svg'
+import { ReactComponent as UserIcon } from './user.svg'
+import { ReactComponent as SettingIcon } from './setting.svg'
 
 export {
   HistoryIcon,
@@ -29,5 +31,7 @@ export {
   SelectorIcon,
   LightIcon,
   DarkIcon,
-  LogoutIcon
+  LogoutIcon,
+  UserIcon,
+  SettingIcon
 }

@@ -4,7 +4,7 @@ const ItemsList = () => (
   <div className="px-4 py-5">
     <h3 className="mb-4 font-bold">Item : 1</h3>
     <div className="grid grid-cols-8 gap-6">
-      <div className="col-span-4">
+      <div className="col-span-8 sm:col-span-4">
         <Input
           labelText="Item Name"
           type="text"
@@ -12,7 +12,7 @@ const ItemsList = () => (
           id="item-name"
         />
       </div>
-      <div className="col-span-2">
+      <div className="col-span-4 sm:col-span-2">
         <Input
           labelText="Qty"
           type="text"
@@ -20,7 +20,7 @@ const ItemsList = () => (
           id="client-phone-number"
         />
       </div>
-      <div className="col-span-2">
+      <div className="col-span-4 sm:col-span-2">
         <Input
           labelText="Price"
           type="text"
