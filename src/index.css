@@ -9,7 +9,7 @@
     @apply text-darkSecondary;
   }
   .container {
-    @apply flex min-w-full max-h-screen bg-primary dark:bg-darkPrimary;
+    @apply min-w-full h-[100vh] bg-primary dark:bg-darkPrimary sm:pl-[80px];
   }
 }
 
@@ -18,13 +18,13 @@
 
 @layer components {
   .side-bar {
-    @apply flex flex-col items-center h-screen text-darkPrimary bg-secondary dark:text-primary dark:bg-darkSecondary;
+    @apply fixed bottom-0 flex flex-col items-center sm:h-screen text-darkPrimary bg-secondary dark:text-primary dark:bg-darkSecondary;
   }
   .sidebar-btn {
-    @apply flex items-center justify-center w-14 h-12 mt-2 rounded-md dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary hover:text-darkPrimary;
+    @apply relative flex items-center justify-center w-14 h-12 mt-2 mb-2 sm:mb-0 rounded-md dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary hover:text-darkPrimary;
   }
   .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-20 rounded-md shadow-md text-darkPrimary bg-secondary dark:text-primary dark:bg-darkSecondary text-xs font-bold transition-all duration-100 origin-left scale-0;
+    @apply hidden sm:block absolute w-auto p-2 m-2 min-w-max left-[4.3rem] rounded-md shadow-md text-darkPrimary bg-secondary dark:text-primary dark:bg-darkSecondary text-xs font-bold transition-all duration-100 origin-left scale-0;
   }
   .input {
     @apply mt-1 dark:focus:ring-primary dark:focus:border-darkPrimary focus:ring-darkPrimary focus:border-primary border-primary dark:border-darkPrimary block w-full shadow-sm sm:text-sm rounded-md;

@@ -2,7 +2,7 @@
 import { Fragment, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '../../assets'
-import countryList from '../../constant/constant'
+import countryList from '../../utils/constant'
 
 const Autocomplete = () => {
   const [selected, setSelected] = useState(countryList[166])

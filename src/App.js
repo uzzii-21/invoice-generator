@@ -7,13 +7,16 @@ const App = () => {
     setInvoicePanelState(!invoicePanelState)
   }
   return (
-    <main className="container">
+    <>
       <SideBar openForm={toggleFormPanel} />
+      <main className="container">
+        <h1>DashBoard</h1>
+      </main>
       <InvoiceFormPanel
         toggle={invoicePanelState}
         closeForm={toggleFormPanel}
       />
-    </main>
+    </>
   )
 }
 export default App

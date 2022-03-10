@@ -33,11 +33,15 @@ const Toggle = () => {
     <button
       type="button"
       onClick={darkModeToggle}
-      className="flex items-center justify-center group w-full h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
+      className="flex items-center justify-center group w-12 h-12 rounded-xl sm:w-full  sm:rounded-none sm:h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
     >
       <span className="sr-only">Use setting</span>
-      {enabled ? <DarkIcon /> : <LightIcon />}
-      <span className="sidebar-tooltip group-hover:scale-100">
+      {enabled ? (
+        <DarkIcon class="h-5 w-5 sm:w-6 sm:h-6" />
+      ) : (
+        <LightIcon class="h-5 w-5 sm:w-6 sm:h-6" />
+      )}
+      <span className="sidebar-tooltip left-20 group-hover:scale-100">
         {enabled ? 'Dark Mode' : 'Light Mode'}
       </span>
     </button>
