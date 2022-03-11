@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
-const Input = ({ labelText, type, id, name, onChange, onBlur, value }) => (
+const Input = ({ labelText, type, id, name, onChange, onBlur, value }) => {
+  return (
   <>
     <label htmlFor={id} className="block text-sm font-medium">
       {labelText}
@@ -17,7 +18,7 @@ const Input = ({ labelText, type, id, name, onChange, onBlur, value }) => (
     </label>
     {/* <p className='text-xs mt-1 text-red-400'>{labelText} is Required</p> */}
   </>
-)
+)}
 
 Input.defaultProps = {
   onBlur: undefined

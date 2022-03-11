@@ -21,8 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint . ",
-    "style": "npx prettier --write ."
+    "style": "npx prettier --write .",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint --fix .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +57,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.6",
     "prettier": "2.5.1",
-    "tailwindcss": "^3.0.22"
+    "tailwindcss": "^3.0.22",
+    "husky": "^7.0.0"
   }
 }
