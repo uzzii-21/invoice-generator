@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import { XIcon } from '../../assets'
 import { Input, Autocomplete, ItemsList } from '../../components'
 
-
 const initialValues = {
   purchaseOrder: '',
   nationalTax: '',
