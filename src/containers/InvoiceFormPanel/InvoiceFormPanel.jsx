@@ -7,15 +7,17 @@ import PropTypes from 'prop-types'
 import { XIcon } from '../../assets'
 import { Input, Autocomplete, ItemsList } from '../../components'
 
+
+const initialValues = {
+  purchaseOrder: '',
+  nationalTax: '',
+  saleTax: '',
+  invoiceDate: '',
+  paymentDue: ''
+}
 const InvoiceFormPanel = ({ toggle, closeForm }) => {
   const formik = useFormik({
-    initialValues: {
-      purchaseOrder: '',
-      nationalTax: '',
-      saleTax: '',
-      invoiceDate: '',
-      paymentDue: ''
-    },
+    initialValues,
     onSubmit: (values) => {
       alert(values)
     }
