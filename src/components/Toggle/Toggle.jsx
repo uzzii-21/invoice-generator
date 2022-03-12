@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react'
-import { DarkIcon, LightIcon } from '../../assets'
+import { useState, useEffect } from 'react';
+import { DarkIcon, LightIcon } from '../../assets';
 
 const Toggle = () => {
-  const [enabled, setEnabled] = useState(false)
+  const [enabled, setEnabled] = useState(false);
 
   const lightMode = () => {
-    document.documentElement.classList.remove('dark')
-    setEnabled(true)
-    localStorage.theme = 'light'
-  }
+    document.documentElement.classList.remove('dark');
+    setEnabled(true);
+    localStorage.theme = 'light';
+  };
   const darkMode = () => {
-    document.documentElement.classList.add('dark')
-    localStorage.theme = 'dark'
-    setEnabled(false)
-  }
+    document.documentElement.classList.add('dark');
+    localStorage.theme = 'dark';
+    setEnabled(false);
+  };
 
-  const darkModeToggle = () => (enabled ? darkMode() : lightMode())
+  const darkModeToggle = () => (enabled ? darkMode() : lightMode());
 
   useEffect(() => {
     if (
@@ -23,11 +23,11 @@ const Toggle = () => {
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      darkMode()
+      darkMode();
     } else {
-      lightMode()
+      lightMode();
     }
-  }, [])
+  }, []);
 
   return (
     <button
@@ -45,7 +45,7 @@ const Toggle = () => {
         {enabled ? 'Dark Mode' : 'Light Mode'}
       </span>
     </button>
-  )
-}
+  );
+};
 
-export default Toggle
+export default Toggle;

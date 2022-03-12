@@ -251,6 +251,6 @@ const countryList = [
   { id: 'ZM', name: 'Zambia' },
   { id: 'ZW', name: 'Zimbabwe' },
   { id: 'AX', name: 'Åland Islands' }
-]
+];
 
-export default countryList
+export default countryList;

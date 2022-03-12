@@ -3,7 +3,7 @@ semi: false
 trailingComma: none
 overrides:
   - files:
-      - '*.ts'
-      - '*.tsx'
+      - '*.js'
+      - '*.jsx'
     options:
       semi: true

@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import { Fragment } from 'react'
-import { useFormik } from 'formik'
-import { Dialog, Transition } from '@headlessui/react'
-import PropTypes from 'prop-types'
-import { XIcon } from '../../assets'
-import { Input, Autocomplete, ItemsList } from '../../components'
+import { Fragment } from 'react';
+import { useFormik } from 'formik';
+import { Dialog, Transition } from '@headlessui/react';
+import PropTypes from 'prop-types';
+import { XIcon } from '../../assets';
+import { Input, Autocomplete, ItemsList } from '../../components';
 
 const initialValues = {
   purchaseOrder: '',
@@ -13,18 +13,18 @@ const initialValues = {
   saleTax: '',
   invoiceDate: '',
   paymentDue: ''
-}
+};
 const InvoiceFormPanel = ({ toggle, closeForm }) => {
   const formik = useFormik({
     initialValues,
     onSubmit: (values) => {
-      alert(values)
+      alert(values);
     }
     // validate: values => {
     //   const error = ''
     //   return error
     // }
-  })
+  });
   return (
     <Transition.Root show={toggle} as={Fragment}>
       <Dialog
@@ -329,12 +329,12 @@ const InvoiceFormPanel = ({ toggle, closeForm }) => {
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
 
 InvoiceFormPanel.propTypes = {
   toggle: PropTypes.bool.isRequired,
   closeForm: PropTypes.func.isRequired
-}
+};
 
-export default InvoiceFormPanel
+export default InvoiceFormPanel;

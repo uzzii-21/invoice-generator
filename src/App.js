@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { SideBar, InvoiceFormPanel } from './containers'
+import { useState } from 'react';
+import { SideBar, InvoiceFormPanel } from './containers';
 
 const App = () => {
-  const [invoicePanelState, setInvoicePanelState] = useState(false)
+  const [invoicePanelState, setInvoicePanelState] = useState(false);
   const toggleFormPanel = () => {
-    setInvoicePanelState(!invoicePanelState)
-  }
+    setInvoicePanelState(!invoicePanelState);
+  };
   return (
     <>
       <SideBar openForm={toggleFormPanel} />
@@ -17,6 +17,6 @@ const App = () => {
         closeForm={toggleFormPanel}
       />
     </>
-  )
-}
-export default App
+  );
+};
+export default App;

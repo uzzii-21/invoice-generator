@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import {
   AddIcon,
   DashboardIcon,
@@ -6,8 +6,8 @@ import {
   LogoutIcon,
   SettingIcon,
   UserIcon
-} from '../../assets'
-import { SideBarButton, Toggle } from '../../components'
+} from '../../assets';
+import { SideBarButton, Toggle } from '../../components';
 
 const SideBar = ({ openForm }) => (
   <aside className="side-bar">
@@ -45,10 +45,10 @@ const SideBar = ({ openForm }) => (
       </a>
     </div>
   </aside>
-)
+);
 
 SideBar.propTypes = {
   openForm: PropTypes.func.isRequired
-}
+};
 
-export default SideBar
+export default SideBar;

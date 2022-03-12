@@ -1,12 +1,12 @@
 /* eslint-disable no-shadow */
-import { Fragment, useState } from 'react'
-import { Combobox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '../../assets'
-import countryList from '../../utils/constant'
+import { Fragment, useState } from 'react';
+import { Combobox, Transition } from '@headlessui/react';
+import { CheckIcon, SelectorIcon } from '../../assets';
+import countryList from '../../utils/constant';
 
 const Autocomplete = () => {
-  const [selected, setSelected] = useState(countryList[166])
-  const [query, setQuery] = useState('')
+  const [selected, setSelected] = useState(countryList[166]);
+  const [query, setQuery] = useState('');
 
   const filteredPeople =
     query === ''
@@ -16,7 +16,7 @@ const Autocomplete = () => {
             .toLowerCase()
             .replace(/\s+/g, '')
             .includes(query.toLowerCase().replace(/\s+/g, ''))
-        )
+        );
 
   return (
     <Combobox value={selected} onChange={setSelected}>
@@ -87,7 +87,7 @@ const Autocomplete = () => {
         </Transition>
       </div>
     </Combobox>
-  )
-}
+  );
+};
 
-export default Autocomplete
+export default Autocomplete;

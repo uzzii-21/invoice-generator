@@ -1,4 +1,4 @@
-import Input from '../Input/Input'
+import Input from '../Input/Input';
 
 const ItemsList = () => (
   <div className="px-4 py-5">
@@ -38,6 +38,6 @@ const ItemsList = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default ItemsList
+export default ItemsList;
