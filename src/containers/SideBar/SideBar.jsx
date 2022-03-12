@@ -8,10 +8,10 @@ import {
   UserIcon
 } from '../../assets';
 import { SideBarButton, Toggle } from '../../components';
-import { FormState } from '../../context/FormStateContext';
+import { FormPanelState } from '../../context/InvoiceFormPanelContext';
 
 const SideBar = () => {
-  const { setState } = useContext(FormState);
+  const { setState } = useContext(FormPanelState);
   return (
     <aside className="side-bar">
       <a className="mt-3 hidden sm:block" href="/">

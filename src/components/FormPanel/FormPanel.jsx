@@ -2,10 +2,10 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { XIcon } from '../../assets';
-import { FormState } from '../../context/FormStateContext';
+import { FormPanelState } from '../../context/InvoiceFormPanelContext';
 
 const FormPanel = ({ children }) => {
-  const { state, setState } = useContext(FormState);
+  const { state, setState } = useContext(FormPanelState);
   return (
     <Transition.Root show={state} as={Fragment}>
       <Dialog

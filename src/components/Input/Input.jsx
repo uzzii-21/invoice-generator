@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types';
 
-const Input = ({ labelText, type, id, name, onChange, onBlur, value }) => (
+const Input = ({
+  labelText,
+  type,
+  id,
+  name,
+  onChange,
+  onBlur,
+  value,
+  isValid
+}) => (
   <>
     <label htmlFor={id} className="block text-sm font-medium">
       {labelText}
@@ -15,12 +24,17 @@ const Input = ({ labelText, type, id, name, onChange, onBlur, value }) => (
         onBlur={onBlur}
       />
     </label>
-    {/* <p className='text-xs mt-1 text-red-400'>{labelText} is Required</p> */}
+    {isValid && (
+      <p className="text-[10px] mt-2 text-red-400">
+        {' '}
+        {labelText} {isValid}
+      </p>
+    )}
   </>
 );
 
 Input.defaultProps = {
-  onBlur: undefined
+  isValid: null
 };
 
 Input.propTypes = {
@@ -29,8 +43,9 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func,
-  value: PropTypes.string.isRequired
+  onBlur: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  isValid: PropTypes.string
 };
 
 export default Input;

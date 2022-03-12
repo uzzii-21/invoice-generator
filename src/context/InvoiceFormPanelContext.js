@@ -1,21 +1,21 @@
 import { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const FormState = createContext();
+export const FormPanelState = createContext();
 
-const FormPanelState = ({ children }) => {
+const FormPanelContext = ({ children }) => {
   const [state, setState] = useState(false);
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <FormState.Provider value={{ state, setState }}>
+    <FormPanelState.Provider value={{ state, setState }}>
       {children}
-    </FormState.Provider>
+    </FormPanelState.Provider>
   );
 };
 
-FormPanelState.propTypes = {
+FormPanelContext.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default FormPanelState;
+export default FormPanelContext;

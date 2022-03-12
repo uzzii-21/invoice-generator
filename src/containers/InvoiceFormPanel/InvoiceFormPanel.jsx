@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useFormik } from 'formik';
-import { Input, Autocomplete, ItemsList } from '../../components';
+import * as Yup from 'yup';
+import { Input } from '../../components';
 import FormPanel from '../../components/FormPanel/FormPanel';
 
 const initialValues = {
@@ -10,17 +11,27 @@ const initialValues = {
   invoiceDate: '',
   paymentDue: ''
 };
+const onSubmit = (values) => {
+  console.log('Form Data', values);
+};
+
+const invoiceFormValidationSchema = Yup.object({
+  purchaseOrder: Yup.string().required('Required!'),
+  nationalTax: Yup.string().required('Required!'),
+  saleTax: Yup.string().required('Required!'),
+  invoiceDate: Yup.string().required('Required!'),
+  paymentDue: Yup.string().required('Required!')
+});
+
 const InvoiceFormPanel = () => {
   const formik = useFormik({
     initialValues,
-    onSubmit: (values) => {
-      alert(values);
-    }
-    // validate: values => {
-    //   const error = ''
-    //   return error
-    // }
+    onSubmit,
+    validationSchema: invoiceFormValidationSchema
   });
+
+  console.log('Form Touched', formik.touched);
+
   return (
     <FormPanel>
       {/* Replace with your content */}
@@ -38,6 +49,12 @@ const InvoiceFormPanel = () => {
                     id="purchase-order"
                     onChange={formik.handleChange}
                     value={formik.values.purchaseOrder}
+                    isValid={
+                      formik.errors.purchaseOrder &&
+                      formik.touched.purchaseOrder &&
+                      formik.errors.purchaseOrder
+                    }
+                    onBlur={formik.handleBlur}
                   />
                 </div>
 
@@ -49,6 +66,12 @@ const InvoiceFormPanel = () => {
                     id="national-tax"
                     onChange={formik.handleChange}
                     value={formik.values.nationalTax}
+                    isValid={
+                      formik.errors.nationalTax &&
+                      formik.touched.nationalTax &&
+                      formik.errors.nationalTax
+                    }
+                    onBlur={formik.handleBlur}
                   />
                 </div>
 
@@ -60,6 +83,12 @@ const InvoiceFormPanel = () => {
                     id="sale-tax"
                     onChange={formik.handleChange}
                     value={formik.values.saleTax}
+                    isValid={
+                      formik.errors.saleTax &&
+                      formik.touched.saleTax &&
+                      formik.errors.saleTax
+                    }
+                    onBlur={formik.handleBlur}
                   />
                 </div>
 
@@ -71,6 +100,12 @@ const InvoiceFormPanel = () => {
                     id="invoice-date"
                     onChange={formik.handleChange}
                     value={formik.values.invoiceDate}
+                    isValid={
+                      formik.errors.invoiceDate &&
+                      formik.touched.invoiceDate &&
+                      formik.errors.invoiceDate
+                    }
+                    onBlur={formik.handleBlur}
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -81,13 +116,19 @@ const InvoiceFormPanel = () => {
                     id="payment-due"
                     onChange={formik.handleChange}
                     value={formik.values.paymentDue}
+                    isValid={
+                      formik.errors.paymentDue &&
+                      formik.touched.paymentDue &&
+                      formik.errors.paymentDue
+                    }
+                    onBlur={formik.handleBlur}
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          <h2 className="my-8 text-base font-bold ">Your Details</h2>
+          {/* <h2 className="my-8 text-base font-bold ">Your Details</h2>
           <div>
             <div className="px-4 py-5 dark:bg-gray-800 bg-gray-200 rounded-md shadow">
               <div className="grid grid-cols-6 gap-6">
@@ -246,7 +287,7 @@ const InvoiceFormPanel = () => {
           <h2 className="my-8 text-base font-bold ">Items List</h2>
           <div className="dark:bg-gray-800 bg-gray-200 rounded-md shadow">
             <ItemsList />
-          </div>
+          </div> */}
           <button type="submit">Save</button>
         </form>
       </div>
