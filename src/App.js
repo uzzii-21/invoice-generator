@@ -1,22 +1,15 @@
-import { useState } from 'react';
 import { SideBar, InvoiceFormPanel } from './containers';
+import FormPanelState from './context/FormStateContext';
 
-const App = () => {
-  const [invoicePanelState, setInvoicePanelState] = useState(false);
-  const toggleFormPanel = () => {
-    setInvoicePanelState(!invoicePanelState);
-  };
-  return (
-    <>
-      <SideBar openForm={toggleFormPanel} />
-      <main className="container">
-        <h1>DashBoard</h1>
-      </main>
-      <InvoiceFormPanel
-        toggle={invoicePanelState}
-        closeForm={toggleFormPanel}
-      />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <main className="container">
+      <h1>DashBoard</h1>
+    </main>
+    <FormPanelState>
+      <SideBar />
+      <InvoiceFormPanel />
+    </FormPanelState>
+  </>
+);
 export default App;

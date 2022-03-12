@@ -37,9 +37,9 @@ const Toggle = () => {
     >
       <span className="sr-only">Use setting</span>
       {enabled ? (
-        <DarkIcon class="h-5 w-5 sm:w-6 sm:h-6" />
+        <DarkIcon className="h-5 w-5 sm:w-6 sm:h-6" />
       ) : (
-        <LightIcon class="h-5 w-5 sm:w-6 sm:h-6" />
+        <LightIcon className="h-5 w-5 sm:w-6 sm:h-6" />
       )}
       <span className="sidebar-tooltip left-20 group-hover:scale-100">
         {enabled ? 'Dark Mode' : 'Light Mode'}
