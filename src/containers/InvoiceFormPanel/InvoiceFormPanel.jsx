@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import { Field, Form, Formik } from 'formik';
+import { FieldArray, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { Autocomplete, Input, ItemsList } from '../../components';
+import { Input, ItemsList } from '../../components';
 import FormPanel from '../../components/FormPanel/FormPanel';
 
 const initialValues = {
@@ -31,7 +30,15 @@ const initialValues = {
     clientPostalCode: '',
     clientCountry: '',
     clientEmailAddress: ''
-  }
+  },
+  itemsList: [
+    {
+      itemName: '',
+      qty: '',
+      price: '',
+      itemDescription: ''
+    }
+  ]
 };
 const onSubmit = (values) => {
   console.log('Form Data', values);
@@ -64,7 +71,15 @@ const invoiceFormValidationSchema = Yup.object().shape({
     clientPostalCode: Yup.string().required('Required!'),
     clientCountry: Yup.string().required('Required!'),
     clientEmailAddress: Yup.string().required('Required!')
-  })
+  }),
+  itemsList: Yup.array().of(
+    Yup.object().shape({
+      itemName: Yup.string().required('Required!'),
+      qty: Yup.string().required('Required!'),
+      price: Yup.string().required('Required!'),
+      itemDescription: Yup.string().required('Required!')
+    })
+  )
 });
 
 const InvoiceFormPanel = () => (
@@ -184,13 +199,12 @@ const InvoiceFormPanel = () => (
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="yourCountry"
-                  className="block text-sm font-medium "
-                >
-                  Your Country
-                </label>
-                <Autocomplete />
+                <Input
+                  labelText=" Your Country"
+                  type="text"
+                  name="yourDetails.yourCountry"
+                  id="your-country"
+                />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
@@ -262,13 +276,12 @@ const InvoiceFormPanel = () => (
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="clientCountry"
-                  className="block text-sm font-medium "
-                >
-                  Client Country
-                </label>
-                <Field name="clientCountry" component={<Autocomplete />} />
+                <Input
+                  labelText=" Client Country"
+                  type="text"
+                  name="clientDetails.clientCountry"
+                  id="client-country"
+                />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
@@ -285,7 +298,33 @@ const InvoiceFormPanel = () => (
 
         <h2 className="my-8 text-base font-bold ">Items List</h2>
         <div className="dark:bg-gray-800 bg-gray-200 rounded-md shadow">
-          <ItemsList />
+          <FieldArray
+            name="itemsList"
+            render={(arrayHelpers) => {
+              const { push, remove, form } = arrayHelpers;
+              console.log({ push, remove, form });
+              return (
+                <div>
+                  {form.values.itemsList.map((_, index) => (
+                    <ItemsList index={index} />
+                  ))}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      arrayHelpers.push({
+                        itemName: '',
+                        qty: '',
+                        price: '',
+                        itemDescription: ''
+                      })
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+              );
+            }}
+          />
         </div>
         <button type="submit">Save</button>
       </Form>
