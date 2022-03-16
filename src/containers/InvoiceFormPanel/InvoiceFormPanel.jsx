@@ -1,7 +1,9 @@
 import { FieldArray, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import { AddIcon, DeleteIcon } from '../../assets';
 import { Input, ItemsList } from '../../components';
 import FormPanel from '../../components/FormPanel/FormPanel';
+import IconButton from '../../components/IconButton/IconButton';
 
 const initialValues = {
   invoiceDetails: {
@@ -308,19 +310,32 @@ const InvoiceFormPanel = () => (
                   {form.values.itemsList.map((_, index) => (
                     <ItemsList index={index} />
                   ))}
-                  <button
-                    type="button"
-                    onClick={() =>
-                      arrayHelpers.push({
-                        itemName: '',
-                        qty: '',
-                        price: '',
-                        itemDescription: ''
-                      })
-                    }
-                  >
-                    +
-                  </button>
+                  <div className="flex justify-end pr-4 pb-5">
+                    <IconButton
+                      text="Add Item"
+                      icon={<AddIcon className="h-5 w-5 mr-2" />}
+                      onClick={() =>
+                        push({
+                          itemName: '',
+                          qty: '',
+                          price: '',
+                          itemDescription: ''
+                        })
+                      }
+                    />
+                    <IconButton
+                      text="Delete Item"
+                      icon={<DeleteIcon className="h-5 w-5 mr-2" />}
+                      onClick={() =>
+                        remove({
+                          itemName: '',
+                          qty: '',
+                          price: '',
+                          itemDescription: ''
+                        })
+                      }
+                    />
+                  </div>
                 </div>
               );
             }}

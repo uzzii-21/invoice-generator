@@ -15,6 +15,7 @@ import { ReactComponent as DarkIcon } from './dark.svg';
 import { ReactComponent as LogoutIcon } from './logout.svg';
 import { ReactComponent as UserIcon } from './user.svg';
 import { ReactComponent as SettingIcon } from './setting.svg';
+import { ReactComponent as DeleteIcon } from './delete.svg';
 
 export {
   HistoryIcon,
@@ -33,5 +34,6 @@ export {
   DarkIcon,
   LogoutIcon,
   UserIcon,
-  SettingIcon
+  SettingIcon,
+  DeleteIcon
 };
