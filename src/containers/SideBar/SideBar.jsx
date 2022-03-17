@@ -51,10 +51,10 @@ const SideBar = () => {
           onClick={() => console.log('Setting Clicked')}
         />
       </div>
-      <div className="fixed top-0 left-0 w-full flex-row flex items-center justify-between p-6 sm:sticky sm:flex-col sm:justify-center sm:p-0 mt-auto">
+      <div className="fixed top-0 left-0 w-full flex-row flex items-center justify-end p-6 sm:sticky sm:flex-col sm:justify-center sm:p-0 mt-auto">
         <Toggle />
         <a
-          className="flex items-center justify-center group w-12 h-12 rounded-xl sm:w-full sm:rounded-none sm:h-16 mt-auto bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary dark:hover:bg-darkPrimary dark:hover:text-primary hover:bg-primary"
+          className="flex ml-4 sm:ml-0 items-center justify-center group w-12 h-12 rounded-xl sm:w-full sm:rounded-none sm:h-16 mt-auto hover:opacity-70 bg-gray-200 dark:bg-gray-800 hover:text-darkPrimary sm:dark:hover:bg-darkPrimary dark:hover:text-primary sm:hover:bg-primary sm:hover:opacity-100"
           href="/"
         >
           <LogoutIcon className="h-5 w-5 sm:w-6 sm:h-6" />

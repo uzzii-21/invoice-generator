@@ -310,7 +310,7 @@ const InvoiceFormPanel = () => (
                   {form.values.itemsList.map((_, index) => (
                     <ItemsList index={index} />
                   ))}
-                  <div className="flex justify-end pr-4 pb-5">
+                  <div className="flex justify-end pr-5 pt-1 pb-5">
                     <IconButton
                       text="Add Item"
                       icon={<AddIcon className="h-5 w-5 mr-2" />}
